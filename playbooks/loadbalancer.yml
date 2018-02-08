@@ -1,0 +1,5 @@
+---
+- hosts: loadbalancer # Hosts to run the task against
+  tasks:
+    - name: install nginx # our label
+      apt: name=nginx state=present update_cache=yes #Name of module: arguments
