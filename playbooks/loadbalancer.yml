@@ -1,5 +1,6 @@
 ---
 - hosts: loadbalancer # Hosts to run the task against
+  become: true # elevates command to super user (sudo) - inherited by tasks
   tasks:
     - name: install nginx # our label
       apt: name=nginx state=present update_cache=yes #Name of module: arguments
