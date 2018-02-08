@@ -1,4 +1,5 @@
 ---
   - hosts: all #target
     tasks:
-      - command: hostname #Tasks
+      - name: get server hostname # name of task
+        command: hostname # Tasks to perform
