@@ -1,0 +1,4 @@
+---
+  - hosts: all #target
+    tasks:
+      - command: hostname #Tasks
