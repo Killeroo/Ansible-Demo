@@ -4,3 +4,6 @@
   tasks:
     - name: install nginx # our label
       apt: name=nginx state=present update_cache=yes #Name of module: arguments
+    
+    - name: ensure nginx started
+      service: name=nginx state=started enabled=yes # new service module to check state of service that we just installed
