@@ -25,3 +25,14 @@
 
     - name: verify nginx is listening on 3306
       wait_for: port=3306 timeout=1
+
+- hosts: control
+  tasks:
+    - name: verify end-to-end response
+      uri: url=http://{{item}} return_content=yes
+      with_item: groups.loadbalancer
+      register: lb_index # creates variable to store content from request
+
+    - fail: msg="index failed to return content"
+      when: "Hello, from sunny" not in item.content" 
+      with_items: "lb_index.results"
