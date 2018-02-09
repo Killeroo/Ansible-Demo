@@ -34,7 +34,7 @@
       notify: restart apache2
     
     - name: activate demo apache site
-      file: source=/etc/apache2/sites-avaliable/demo.conf dest=/etc/apache2/sites-enabled/demo.conf state=link
+      file: src=/etc/apache2/sites-avaliable/demo.conf dest=/etc/apache2/sites-enabled/demo.conf state=link
       notify: restart apache2
 
   handlers:
