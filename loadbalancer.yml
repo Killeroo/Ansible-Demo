@@ -9,7 +9,7 @@
       service: name=nginx state=started enabled=yes # new service module to check state of service that we just installed
 
     - name: configure nginx site
-      template: src=templates/nginx.conf.j2 dest=/etc/nginx/site-available/demo mode=0644
+      template: src=templates/nginx.conf.j2 dest=/etc/nginx/sites-available/demo mode=0644
       notify: restart nginx
 
     - name: de-activate default nginx site
